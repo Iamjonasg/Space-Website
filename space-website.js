@@ -1,4 +1,5 @@
-
+var launchdata = JSON.parse(data);
+console.log(launchdata);
 var pieExists = false;
 
 
