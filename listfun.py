@@ -5,7 +5,7 @@ import matplotlib.ticker as mticker
 
 file = open("launches.json")
 launches = json.load(file)
-prompt = "Saturn"
+prompt = "Space Shuttle"
 successes = 0
 failures = 0
 others = 0
@@ -49,28 +49,27 @@ for ele in launches:
 newyears = list(years.keys())
 
 
-
 for i in range(len(newyears)):
 
     newyears[i] = int(newyears[i])
 
 
-newyears = list(reversed(newyears))
+newyears = sorted(newyears)
 
 
 def fill_in_numbers(lst):
-    i=0
+    inc = 0
     while True:
-        if lst[i+1] != lst[i] + 1:
-             lst.insert(i+1, lst[i]+1)
-        i+=1
-        if lst[-1] - lst[i]== 1:
+        if lst[-1] - lst[inc] == 1:
             break
+        if lst[inc+1] != lst[inc] + 1:
+            lst.insert(inc+1, lst[inc]+1)
+        inc += 1
+
     return lst
 
 
 fill_in_numbers(newyears)
-
 
 for i in range(len(newyears)):
 
@@ -152,9 +151,10 @@ for ele in years:
     if current > max:
         max = current
 if max < 10:
-    plot2.yaxis.set_ticks(np.arange(start, end, 1))
+    plot2.yaxis.set_ticks(np.arange(start, end+1, 1))
 
-plot2.legend()
+plot2.legend(bbox_to_anchor=(1.04,1), loc="upper left")
+plt.ylim(top=max+1)
 plt.show()
 
 
