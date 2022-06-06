@@ -1,5 +1,4 @@
 import json
-6403
 file = open("launches.json")
 launches = json.load(file)
 rocketnames = []

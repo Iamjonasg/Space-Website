@@ -1,7 +1,7 @@
 import requests
 import json
 
-response = requests.get("https://lldev.thespacedevs.com/2.2.0/launch/previous/?limit=100&offset=0")
+response = requests.get("https://lldev.thespacedevs.com/2.2.0/launch/previous/")
 results = []
 print(response.status_code)
 raw = response.json()
@@ -18,4 +18,5 @@ while offset < count:
 
 with open("launches.json", 'w') as file:
     json.dump(results, file, indent=2)
+
 

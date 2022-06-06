@@ -1,0 +1,39 @@
+body {
+    background-color: #D8F8F4;
+    
+  }
+  
+  #selections {
+    
+    
+    margin: auto;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 30px;
+    align-items: center;
+}
+
+
+
+#graphButton{
+  width: 100px;
+}
+
+h1{
+  font-family: Garamond, monospace;
+  text-align: center;
+  width: 100%;
+  float:center;
+  margin-top: 50px;
+  
+}
+h2{
+  
+  text-align: center;
+  width: 100%;
+  float:center;
+  margin-bottom: 20px;
+  
+}
